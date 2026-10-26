@@ -1,0 +1,6 @@
+activity_id,name,type,start_time,end_time,reward_group,weight,max_claims,min_level,status
+ACT-0001,国庆签到,festival,2026-10-01T00:00:00,2026-10-07T23:59:59,RG-01,0.8,5,1,live
+ACT-0002,冬日预热,season,2026-11-01T00:00:00,2026-11-30T23:59:59,RG-02,0.98,3,10,review
+ACT-0003,,daily_week,2026-10-05T00:00:00,2026-10-04T00:00:00,RG-09,1.5,0,-1,draft
+ACT-0004,双十一特惠,festival,2026-10-01T00:00:00,2026-10-07T23:59:59,RG-01,0.7,2,5,live
+ACT5,双倍掉落,event,2026-12-01T00:00:00,2026-12-02T00:00:00,RG-02,0.3,10,20,live

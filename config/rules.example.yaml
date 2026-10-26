@@ -1,0 +1,33 @@
+# 规则文件示例：只给 3 条，覆盖 3 种 kind。
+# 你要按 docs/rules.md 补到 12 条（R01-R12），kind 需要自己设计并实现：
+#   required / type / regex / range / length / enum / unique / table_unique
+#   datetime_order / foreign_key / overlap / soft_threshold
+# 加规则不许改 Python 代码 —— 这是本项目的核心验收项。
+version: 1
+
+rules:
+  # ---- kind: required ----
+  - id: R01
+    kind: required
+    table: activities
+    fields: [activity_id, name, type, start_time, end_time, reward_group, status]
+    level: error
+    message: "{record}：{field} 不能为空"
+
+  # ---- kind: range（闭区间，至少要有 min 或 max）----
+  - id: R04-weight
+    kind: range
+    table: activities
+    field: weight
+    min: 0.0
+    max: 1.0
+    level: error
+    message: "{record}：weight={value} 超出范围 [0.0, 1.0]"
+
+  # ---- kind: unique（单列或复合列）----
+  - id: R07-activity
+    kind: unique
+    table: activities
+    fields: [activity_id]
+    level: error
+    message: "{record}：activity_id={value} 重复（首次出现在 {first_record}）"

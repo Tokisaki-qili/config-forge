@@ -1,0 +1,38 @@
+# 数据契约：表结构声明。
+# 你实现 loader 时按这个格式解析；不要在这里写业务规则（规则在 rules.yaml）。
+version: 1
+encoding: utf-8
+delimiter: ","
+
+tables:
+  activities:
+    file: data/activities.csv
+    primary_key: activity_id
+    columns:
+      activity_id: { type: string }
+      name:        { type: string }
+      type:        { type: string }
+      start_time:  { type: datetime, format: "%Y-%m-%dT%H:%M:%S" }
+      end_time:    { type: datetime, format: "%Y-%m-%dT%H:%M:%S" }
+      reward_group:{ type: string }
+      weight:      { type: float }
+      max_claims:  { type: int }
+      min_level:   { type: int }
+      status:      { type: string }
+
+  reward_groups:
+    file: data/reward_groups.csv
+    primary_key: [group_id, item_id]
+    columns:
+      group_id: { type: string }
+      item_id:  { type: string }
+      count:    { type: int }
+
+  items:
+    file: data/items.csv
+    primary_key: item_id
+    columns:
+      item_id: { type: string }
+      name:    { type: string }
+      quality: { type: string }
+      stack:   { type: int }
