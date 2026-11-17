@@ -1,6 +1,6 @@
 # 规则清单（12 条，全部要由 `rules.yaml` 驱动）
 
-> 核心验收：**加一条规则只改 YAML，不改 Python 代码。**（做不到，这个项目就白做）
+> 核心验收：**加一条规则只改 YAML，不改 Python 代码。**
 
 ## 级别
 
@@ -26,7 +26,7 @@
 | R11 | `overlap` | `activities`（同 `type`，状态 ∈ {review, live}） | 两个活动时间区间重叠 | error | `ACT-0001 与 ACT-0004 同为 festival 且时间重叠 2026-10-01~2026-10-07` |
 | R12 | `soft_threshold` | `activities.weight` | `weight >= 0.95` 且 `type != festival` | warn | `activities 第 2 行：非节日活动 weight=0.98，体验过强，确认是否刻意` |
 
-## 文案要求（技术策划和纯程序的区别就在这）
+## 文案要求
 
 1. **说清是哪张表第几行（或主键）、哪个字段、什么值、期望什么**。只报 "invalid" 的报错等于没报。
 2. 不要暴露 Python 异常栈给策划；异常只在日志里。

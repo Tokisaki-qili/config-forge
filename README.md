@@ -25,7 +25,7 @@ config-forge/
   tests/                                    ← 你的测试
 ```
 
-## 技术选型（定死，别改）
+## 技术选型
 
 - Python 3.10+，标准库优先；唯一第三方依赖 `pyyaml`（读配置）+ `pytest`（测试）
 - **不引入 pandas / pydantic / jsonschema**：校验器是你要手写的核心，不许被库代劳

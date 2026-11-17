@@ -14,7 +14,7 @@ tables:
       type:        { type: string }
       start_time:  { type: datetime, format: "%Y-%m-%dT%H:%M:%S" }
       end_time:    { type: datetime, format: "%Y-%m-%dT%H:%M:%S" }
-      reward_group:{ type: string }
+      reward_group: { type: string }
       weight:      { type: float }
       max_claims:  { type: int }
       min_level:   { type: int }

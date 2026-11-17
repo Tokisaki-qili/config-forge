@@ -1,0 +1,30 @@
+{
+  // ===== 解释器：固定用系统 Python 3.14（pyyaml / pytest 都装在这里）=====
+  "python.defaultInterpreterPath": "D:\\code\\Python314\\python.exe",
+  "python.terminal.activateEnvironment": false,
+
+  // ===== 测试：用 pytest，不用 unittest =====
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.cwd": "${workspaceFolder}",
+
+  // ===== 类型检查：basic 就够，避免满屏黄线 =====
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.extraPaths": ["."],
+
+  // ===== 编码与空白：全项目统一 UTF-8 / LF =====
+  "files.encoding": "utf8",
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // ===== 终端：强制 Python 用 UTF-8，避免 Windows 控制台 GBK 把中文打成乱码 =====
+  "terminal.integrated.env.windows": {
+    "PYTHONIOENCODING": "utf-8",
+    "PYTHONUTF8": "1"
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+
+  // ===== 保留原来的个人设置 =====
+  "python.REPL.enableREPLSmartSend": false
+}

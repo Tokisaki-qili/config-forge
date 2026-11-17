@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "安装依赖",
+      "type": "shell",
+      "command": "${command:python.interpreterPath} -m pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple",
+      "problemMatcher": []
+    },
+    {
+      "label": "跑全部测试",
+      "type": "shell",
+      "command": "${command:python.interpreterPath} -m pytest -q",
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "运行 CLI",
+      "type": "shell",
+      "command": "${command:python.interpreterPath} -m config_forge.cli --schema config/schema.yaml --data data",
+      "problemMatcher": []
+    }
+  ]
+}
